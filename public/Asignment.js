@@ -1,6 +1,3 @@
-
-
-
 class WeatherNow extends React.Component {
     render() {
         if (this.props.value.length == 0) {
@@ -52,19 +49,6 @@ class WeatherNow extends React.Component {
 }
 
 
-function Weather16dayMap(props) {
-    return (
-        <div id={props.data.valid_date} className="live__scroll--box align-self-baseline">
-            <p>{props.DAY} {props.DATE}</p>
-            <img src={props._icon} height="40" width="40"></img>
-            <div className="row">
-                <b>{props._temp}°C</b>
-                <h6>{props._apptemp}°C</h6>
-            </div>
-            <h6>{props.des}</h6>
-        </div>
-    )
-}
 
 
 class Weather16day extends React.Component {
@@ -117,23 +101,7 @@ class Weather16day extends React.Component {
         }
     }
 }
-function Search(props) {
-    function onKeyPressHandle(e) {
-        props.onKeyPress(e.key);
-    }
-    function input(e) {
-        props._input(e.target.value)
-    }
-    return (
-        <nav className="navbar sticky-top" id="mainNav">
-            <div className="col-sm-4 col-md-6 col-lg-8">
-            </div>
-            <div className="input-group col-sm-8 col-md-6 col-lg-4">
-                <input className="search-box" type="search" onChange={input} onKeyPress={onKeyPressHandle} placeholder="Search" aria-label="Search" />
-            </div>
-        </nav>
-    )
-}
+
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -152,6 +120,37 @@ class SearchBar extends React.Component {
     }
 }
 
+function Weather16dayMap(props) {
+    return (
+        <div id={props.data.valid_date} className="live__scroll--box align-self-baseline">
+            <p>{props.DAY} {props.DATE}</p>
+            <img src={props._icon} height="40" width="40"></img>
+            <div className="row">
+                <b>{props._temp}°C</b>
+                <h6>{props._apptemp}°C</h6>
+            </div>
+            <h6>{props.des}</h6>
+        </div>
+    )
+}
+
+function Search(props) {
+    function onKeyPressHandle(e) {
+        props.onKeyPress(e.key);
+    }
+    function input(e) {
+        props._input(e.target.value)
+    }
+    return (
+        <nav className="navbar sticky-top" id="mainNav">
+            <div className="col-sm-4 col-md-6 col-lg-8">
+            </div>
+            <div className="input-group col-sm-8 col-md-6 col-lg-4">
+                <input className="search-box" type="search" onChange={input} onKeyPress={onKeyPressHandle} placeholder="Search" aria-label="Search" />
+            </div>
+        </nav>
+    )
+}
 
 class Weather extends React.Component {
     constructor(props) {
